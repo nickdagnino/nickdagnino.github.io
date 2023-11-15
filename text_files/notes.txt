@@ -1,0 +1,24 @@
+Personal Website:
+1) Landing Page (Index)
+  A. Quick Boot Screen
+  B. Looping video standing in places
+  C. About Me/Bio
+  D. Personal Mission Statement
+2) Project Portfolio
+  A. All Projects Page
+  B. Project Specific Pages
+    I. Stock Market Neural Network
+      a. Tags: Machine Learning, Nural Network
+    II. Electic Skateboard
+      a. Tags: Mechanical, Machine Learning
+    III. Axail Flux Turbine/Motor
+      a. Tags: Mechanical, Eletrical
+    IV. Aero Helmet
+    V. Hover Cycle
+3) Resume/CV Page (timeline)
+  A. Work Mission Statement
+  B. Work Experience/Research
+  C. Education
+  D. Skills
+  E. Notabilites
+4) 404 Error Page
