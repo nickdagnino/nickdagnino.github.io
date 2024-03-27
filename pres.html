@@ -1,0 +1,15 @@
+# Write the HTML content to a file
+with open("pres.html", "w") as file:
+    file.write("""
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url=https://docs.google.com/presentation/d/1lXAgmvZYMf0yQ-iB3nHVcFoDl0gI3BHJY9HexHkQjTo/edit?usp=sharing" />
+</head>
+<body>
+</body>
+</html>
+""")
+
+# Print a success message
+print("The HTML file 'redirect.html' has been successfully created. It will redirect the user to google.com when visited.")
