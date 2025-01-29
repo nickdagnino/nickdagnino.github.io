@@ -8,7 +8,7 @@ Personal Website:
   A. All Projects Page
   B. Project Specific Pages
     I. Stock Market Neural Network
-      a. Tags: Machine Learning, Nural Network
+      a. Tags: Machine Learning, Neural Network
     II. Electic Skateboard
       a. Tags: Mechanical, Machine Learning
     III. Axail Flux Turbine/Motor
