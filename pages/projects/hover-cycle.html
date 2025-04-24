@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ...existing head content... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hover Cycle - Nick Dagnino</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <script src="../../js/components.js"></script>
+    <script src="../../js/script.js" defer></script>
 </head>
 <body>
-    <!-- ...existing header... -->
-    
     <main class="project-detail">
-        <div class="project-hero">
+        <div class="project-hero modern-card">
             <h1>Hover Cycle</h1>
             <div class="project-meta">
                 <div class="tech-stack">
-                    <span class="tech-tag">Concept Design</span>
-                    <span class="tech-tag">Engineering</span>
-                    <span class="tech-tag">Innovation</span>
+                    <span class="tech-tag">CAD</span>
+                    <span class="tech-tag">Aerodynamics</span>
+                    <span class="tech-tag">Propulsion</span>
                 </div>
                 <time>2023</time>
             </div>
@@ -22,15 +25,15 @@
 
         <section class="project-content">
             <div class="project-gallery">
-                <div class="project-main-image">
+                <div class="project-main-image modern-card floating-element">
                     <img src="../assets/images/projects/hover-cycle/main.jpg" alt="Hover Cycle">
                 </div>
-                <div class="model-viewer">
+                <div class="model-viewer modern-card">
                     <!-- 3D Model Viewer -->
                 </div>
             </div>
 
-            <div class="project-description">
+            <div class="project-description modern-card">
                 <h2>Overview</h2>
                 <p>Futuristic hover cycle concept exploring advanced propulsion technology and innovative transportation solutions.</p>
 
@@ -47,11 +50,9 @@
         </section>
 
         <nav class="project-navigation">
-            <a href="aero-helmet.html" class="prev-project">← Previous Project</a>
-            <a href="portfolio-site.html" class="next-project">Next Project →</a>
+            <a href="../projects.html" class="header-cta">← Back to Projects</a>
+            <a href="axial-flux-motor.html" class="header-cta">Next Project →</a>
         </nav>
     </main>
-
-    <!-- ...existing footer... -->
 </body>
 </html>
