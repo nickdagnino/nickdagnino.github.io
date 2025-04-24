@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ...existing head content... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aero Helmet - Nick Dagnino</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <script src="../../js/components.js"></script>
+    <script src="../../js/script.js" defer></script>
 </head>
 <body>
-    <!-- ...existing header... -->
+    <header>
+        <!-- ...existing header... -->
+    </header>
     
     <main class="project-detail">
-        <div class="project-hero">
+        <div class="project-hero modern-card">
             <h1>Aero Helmet</h1>
             <div class="project-meta">
                 <div class="tech-stack">
-                    <span class="tech-tag">Design</span>
+                    <span class="tech-tag">3D Printing</span>
+                    <span class="tech-tag">CAD</span>
                     <span class="tech-tag">Aerodynamics</span>
-                    <span class="tech-tag">Engineering</span>
                 </div>
                 <time>2023</time>
             </div>
@@ -22,15 +29,15 @@
 
         <section class="project-content">
             <div class="project-gallery">
-                <div class="project-main-image">
-                    <img src="../assets/images/projects/aero-helmet/main.jpg" alt="Aero Helmet">
+                <div class="project-main-image modern-card floating-element">
+                    <img src="../../assets/images/projects/aero-helmet/main.jpg" alt="Aero Helmet">
                 </div>
-                <div class="model-viewer">
+                <div class="model-viewer modern-card">
                     <!-- 3D Model Viewer -->
                 </div>
             </div>
 
-            <div class="project-description">
+            <div class="project-description modern-card">
                 <h2>Overview</h2>
                 <p>Aerodynamically optimized helmet design for competitive cycling, focusing on performance and safety.</p>
 
@@ -47,8 +54,8 @@
         </section>
 
         <nav class="project-navigation">
-            <a href="axial-flux-motor.html" class="prev-project">← Previous Project</a>
-            <a href="hover-cycle.html" class="next-project">Next Project →</a>
+            <a href="../projects.html" class="header-cta">← Back to Projects</a>
+            <a href="hover-cycle.html" class="header-cta">Next Project →</a>
         </nav>
     </main>
 

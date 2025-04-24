@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ...existing head content... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electric Skateboard - Nick Dagnino</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <script src="../../js/components.js"></script>
+    <script src="../../js/script.js" defer></script>
 </head>
 <body>
-    <!-- ...existing header... -->
-    
     <main class="project-detail">
-        <div class="project-hero">
+        <div class="project-hero modern-card">
             <h1>Electric Skateboard</h1>
             <div class="project-meta">
                 <div class="tech-stack">
+                    <span class="tech-tag">Electronics</span>
                     <span class="tech-tag">Mechanical</span>
-                    <span class="tech-tag">Machine Learning</span>
-                    <span class="tech-tag">Hardware</span>
+                    <span class="tech-tag">CAD</span>
                 </div>
                 <time>2023</time>
             </div>
@@ -22,23 +25,25 @@
 
         <section class="project-content">
             <div class="project-gallery">
-                <div class="project-main-image">
-                    <img src="../assets/images/projects/electric-skateboard/main.jpg" alt="Electric Skateboard">
+                <div class="project-main-image modern-card floating-element">
+                    <img src="../../assets/images/projects/electric-skateboard/main.jpg" alt="Electric Skateboard">
                 </div>
-                <div class="model-viewer">
+                <div class="model-viewer modern-card">
                     <!-- 3D Model Viewer -->
                 </div>
             </div>
 
-            <div class="project-description">
+            <div class="project-description modern-card">
                 <h2>Overview</h2>
-                <p>Custom-built electric skateboard featuring advanced motor control and machine learning-based ride optimization.</p>
+                <p>A custom-built electric skateboard featuring advanced motor control and machine learning-based ride optimization. This project combines mechanical engineering, electrical systems, and artificial intelligence to create a unique transportation solution.</p>
 
                 <h2>Technical Details</h2>
                 <ul>
-                    <li>Motor: Custom axial flux design</li>
-                    <li>Battery: High-capacity lithium configuration</li>
-                    <li>Control System: ML-enhanced ride stabilization</li>
+                    <li>Custom axial flux motor design for optimal power-to-weight ratio</li>
+                    <li>High-capacity lithium battery configuration</li>
+                    <li>ML-enhanced ride stabilization system</li>
+                    <li>Real-time telemetry and performance monitoring</li>
+                    <li>Regenerative braking system</li>
                 </ul>
 
                 <h2>Development Process</h2>
@@ -47,11 +52,9 @@
         </section>
 
         <nav class="project-navigation">
-            <a href="stock-market-nn.html" class="prev-project">← Previous Project</a>
-            <a href="axial-flux-motor.html" class="next-project">Next Project →</a>
+            <a href="../projects.html" class="header-cta">← Back to Projects</a>
+            <a href="portfolio-site.html" class="header-cta">Next Project →</a>
         </nav>
     </main>
-
-    <!-- ...existing footer... -->
 </body>
 </html>
