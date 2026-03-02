@@ -51,39 +51,51 @@
   <!-- Header END -->
 
   <!-- Main START -->
-  <main>
-    <div class="hero split-section">
-        <div class="hero-content">
-            <h2>Engineering Tomorrow's Technology, Today</h2>
-            <p class="hero-text">
-                I am dedicated to forging meaningful connections through the power of creativity. My mission is to passionately
-                craft and share stories that inspire, resonate, and evoke positive change. Through innovative design, I aim to
-                ignite curiosity, spark emotions, and foster a deeper understanding of the world around us. I aspire to be a
-                catalyst for impactful, authentic experiences that leave a lasting impression and contribute to a more
-                empathetic and connected global community.
-            </p>
-            <div class="cta-buttons">
-                <a href="pages/projects.html" class="cta-button">View Projects</a>
-                <a href="#contact" class="cta-button secondary">Contact Me</a>
-            </div>
+  <main class="home-main">
+    <section class="hero hero-modern" aria-labelledby="home-mission">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Mission</p>
+        <div class="mission-patch" aria-label="Monkey mission patch">
+          <img src="assets/images/monkey-mission.svg" alt="Monkey mission patch" class="mission-patch-image">
+          <span>Monkey Mission Patch</span>
         </div>
-        <div class="hero-visual">
-            <div class="placeholder-3d floating-element">
-                <!-- 3D avatar or animation placeholder -->
-                <span class="placeholder-text">Interactive 3D Avatar</span>
-            </div>
+        <h1 id="home-mission">Monkey Mission</h1>
+        <p class="hero-text">
+          I'm Nick, a mechanical and aerospace engineering student at UGA pushing the boundaries of an up-and-coming engineering
+          program. I am passionate about the work I do and aim to build an understanding from first principles. Whether it's
+          testing propulsion systems for fun, building research satellites, or designing high-speed aerial vehicles, I am always down
+          for a challenge. Check out some more of my work.
+        </p>
+        <div class="cta-buttons">
+          <a href="pages/projects.html" class="cta-button">View Projects</a>
+          <a href="#contact" class="cta-button secondary">Work With Me</a>
         </div>
-    </div>
+      </div>
 
-    <section class="skills-section">
-        <h2 class="gradient-text">Technical Skills</h2>
-        <div class="skills-cloud">
-            <!-- Dynamic skill badges -->
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">Java</span>
-            <span class="skill-badge">SolidWorks</span>
-            <!-- ...more skills... -->
-        </div>
+      <div class="hero-media" aria-label="Mission and profile visuals">
+        <figure class="mission-graphic-wrap">
+          <img src="assets/images/monkey-mission.svg" alt="Mission graphic representing project direction" class="mission-graphic">
+        </figure>
+        <figure class="headshot-slot" aria-label="Headshot placeholder">
+          <img src="assets/images/headshot.svg" alt="Headshot of Nick Dagnino" class="headshot-image">
+          <figcaption>Add your headshot image at assets/images/headshot.svg</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="quick-projects" aria-labelledby="quick-projects-title">
+      <h2 id="quick-projects-title">Project Quick Picks</h2>
+      <div class="quick-project-grid">
+        <a href="/pages/projects/stock-market-nn.html" class="project-tile">Stock Market NN</a>
+        <a href="/pages/projects/electric-skateboard.html" class="project-tile">Electric Skateboard</a>
+        <a href="/pages/projects/axial-flux-motor.html" class="project-tile">Axial Flux Motor</a>
+        <a href="/pages/projects/hover-cycle.html" class="project-tile">Hover-Cycle</a>
+        <a href="/pages/projects/drij.html" class="project-tile">DRIJ Test Engine</a>
+        <a href="/pages/projects/aero-helmet.html" class="project-tile">Aero Helmet</a>
+        <a href="/pages/projects.html" class="project-tile" title="See projects page for details">Glide Strike</a>
+        <a href="/pages/projects.html" class="project-tile" title="See projects page for details">har-V (high atmospheric re-entry vehicle)</a>
+        <a href="/pages/projects.html" class="project-tile" title="See projects page for details">Magnolia's Airbrakes</a>
+      </div>
     </section>
   </main>
   <!-- Main END -->
@@ -103,17 +115,11 @@
                 </nav>
             </div>
             <div class="footer-section">
-                <h4>Featured Projects</h4>
-                <ul class="footer-links">
-                    <li><a href="/pages/projects/stock-market-nn.html">Stock Market NN</a></li>
-                    <li><a href="/pages/projects/electric-skateboard.html">Electric Skateboard</a></li>
-                    <li><a href="/pages/projects/drij.html">DRIJ Test Engine</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
                 <h4>Contact & Social</h4>
-                <p><a href="mailto:nick.dagnino05@gmail.com">nick.dagnino05@gmail.com</a></p>
-                <p><a href="mailto:nick.dagnino@uga.edu">nick.dagnino@uga.edu</a></p>
+                <ul class="footer-inline-list">
+                    <li><a href="mailto:nick.dagnino05@gmail.com">nick.dagnino05@gmail.com</a></li>
+                    <li><a href="mailto:nick.dagnino@uga.edu">nick.dagnino@uga.edu</a></li>
+                </ul>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/nickdagnino" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                         <svg class="social-icon" viewBox="0 0 24 24">
