@@ -1520,3 +1520,42 @@ body::after {
 .card-magnolia {
   background: radial-gradient(circle at 78% 15%, rgba(214, 80, 80, 0.32), transparent 35%), linear-gradient(135deg, #151322, #2b1b28, #150f20);
 }
+
+/* Home hero media guardrails (prevents oversized image rendering) */
+.hero-media {
+  width: 100%;
+  max-width: 430px;
+  justify-self: center;
+}
+
+.mission-graphic-wrap {
+  width: 100%;
+  max-width: 430px;
+}
+
+.mission-graphic {
+  max-height: min(52vh, 430px);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+/* Header nav centering on desktop: center page links relative to viewport */
+@media (min-width: 921px) {
+  .site-header .nav-drawer {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+  }
+
+  .site-header .navbar {
+    grid-column: 2;
+    justify-self: center;
+    flex: initial;
+  }
+
+  .site-header .header-right {
+    grid-column: 3;
+    justify-self: end;
+  }
+}
