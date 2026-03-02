@@ -87,6 +87,24 @@ nav ul li a:hover {
 }
 
 /* Global Styles */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 8% 16%, rgba(255, 255, 255, 0.24) 0 4px, transparent 5px),
+    radial-gradient(circle at 13% 19%, rgba(255, 255, 255, 0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 78% 28%, rgba(255, 255, 255, 0.2) 0 6px, transparent 7px),
+    radial-gradient(circle at 72% 74%, rgba(255, 255, 255, 0.18) 0 5px, transparent 6px),
+    radial-gradient(circle at 35% 82%, rgba(255, 255, 255, 0.15) 0 7px, transparent 8px),
+    radial-gradient(circle at 88% 88%, rgba(255, 255, 255, 0.16) 0 4px, transparent 5px),
+    radial-gradient(circle at 52% 46%, rgba(255, 255, 255, 0.14) 0 3px, transparent 4px);
+  opacity: 0.6;
+}
+
 body {
   background: linear-gradient(135deg, var(--primary-color), #000000);
   font-family: 'Inter', sans-serif;
@@ -986,6 +1004,24 @@ footer {
   --shadow-deep: 0 16px 45px rgba(2, 0, 12, 0.5);
 }
 
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 8% 16%, rgba(255, 255, 255, 0.24) 0 4px, transparent 5px),
+    radial-gradient(circle at 13% 19%, rgba(255, 255, 255, 0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 78% 28%, rgba(255, 255, 255, 0.2) 0 6px, transparent 7px),
+    radial-gradient(circle at 72% 74%, rgba(255, 255, 255, 0.18) 0 5px, transparent 6px),
+    radial-gradient(circle at 35% 82%, rgba(255, 255, 255, 0.15) 0 7px, transparent 8px),
+    radial-gradient(circle at 88% 88%, rgba(255, 255, 255, 0.16) 0 4px, transparent 5px),
+    radial-gradient(circle at 52% 46%, rgba(255, 255, 255, 0.14) 0 3px, transparent 4px);
+  opacity: 0.6;
+}
+
 body {
   background:
     radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.45), transparent 45%),
@@ -1149,25 +1185,39 @@ main,
 }
 
 .site-footer .footer-sections {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
   margin-bottom: 1rem;
 }
 
+.site-footer .footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .site-footer .footer-section h4 {
+  margin: 0;
   font-size: 0.95rem;
   letter-spacing: 0.03em;
   color: #eee0cd;
 }
 
-.site-footer .footer-links,
-.site-footer .footer-nav ul {
+.site-footer .footer-nav ul,
+.site-footer .footer-inline-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.site-footer .footer-section .social-links {
+  margin: 0;
 }
 
 .site-footer a,
@@ -1184,4 +1234,289 @@ main,
   .trading-card {
     min-height: 300px;
   }
+
+  .site-footer .footer-sections {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .site-footer .footer-nav ul,
+  .site-footer .footer-inline-list {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+
+/* ===== Home page modern redesign ===== */
+.home-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.hero.hero-modern {
+  margin: 0;
+  min-height: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  text-align: left;
+  align-items: center;
+  padding: 2rem 0 1.5rem;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.hero-eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: #d9d0c2;
+}
+
+.hero-modern h1 {
+  margin: 0.35rem 0 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  line-height: 1.05;
+  color: #fff3df;
+}
+
+.hero-modern .hero-text {
+  max-width: 60ch;
+  color: #d8d3cc;
+  font-size: 1.03rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.2rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #9a8ad8, #7052b0);
+  color: #f8f4ec;
+  font-weight: 600;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(223, 217, 206, 0.22);
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.07);
+}
+
+.hero-media {
+  display: grid;
+  gap: 1rem;
+}
+
+.mission-graphic-wrap,
+.headshot-slot {
+  margin: 0;
+}
+
+.mission-graphic {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+}
+
+.headshot-slot {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  align-items: center;
+  gap: 0.9rem;
+  color: #c2bdba;
+  font-size: 0.85rem;
+}
+
+.headshot-image {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.quick-projects {
+  margin-top: 2rem;
+}
+
+.quick-projects h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d9d0c2;
+}
+
+.quick-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.project-tile {
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f3ecdf;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.project-tile:hover {
+  transform: translateY(-2px);
+  background: rgba(154, 138, 216, 0.25);
+}
+
+@media (max-width: 920px) {
+  .hero.hero-modern {
+    grid-template-columns: 1fr;
+    gap: 1.3rem;
+    padding-top: 1rem;
+  }
+}
+
+/* ===== follow-up polish: mission patch + footer nav alignment ===== */
+.mission-patch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.35rem 0 0.7rem;
+  padding: 0.35rem 0.6rem 0.35rem 0.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(223, 217, 206, 0.28);
+  background: rgba(255, 255, 255, 0.06);
+  color: #efe5d5;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mission-patch-image {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.site-footer .footer-section {
+  align-items: flex-start;
+}
+
+.site-footer .footer-nav {
+  width: 100%;
+}
+
+.site-footer .footer-nav ul {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.22rem;
+}
+
+@media (max-width: 700px) {
+  .mission-patch {
+    font-size: 0.72rem;
+  }
+}
+
+/* ===== follow-up: denser twinkling starfield + strict left footer alignment ===== */
+@keyframes starsTwinkle {
+  0%, 100% { opacity: 0.4; }
+  25% { opacity: 0.75; }
+  50% { opacity: 0.55; }
+  75% { opacity: 0.9; }
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 4% 8%, rgba(255,255,255,0.22) 0 1px, transparent 2px),
+    radial-gradient(circle at 9% 21%, rgba(255,255,255,0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 13% 44%, rgba(255,255,255,0.2) 0 1px, transparent 2px),
+    radial-gradient(circle at 18% 70%, rgba(255,255,255,0.24) 0 2px, transparent 3px),
+    radial-gradient(circle at 25% 86%, rgba(255,255,255,0.15) 0 1px, transparent 2px),
+    radial-gradient(circle at 31% 12%, rgba(255,255,255,0.2) 0 1px, transparent 2px),
+    radial-gradient(circle at 38% 28%, rgba(255,255,255,0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 44% 57%, rgba(255,255,255,0.24) 0 1px, transparent 2px),
+    radial-gradient(circle at 52% 74%, rgba(255,255,255,0.22) 0 2px, transparent 3px),
+    radial-gradient(circle at 60% 18%, rgba(255,255,255,0.16) 0 1px, transparent 2px),
+    radial-gradient(circle at 67% 40%, rgba(255,255,255,0.22) 0 2px, transparent 3px),
+    radial-gradient(circle at 73% 62%, rgba(255,255,255,0.2) 0 1px, transparent 2px),
+    radial-gradient(circle at 81% 29%, rgba(255,255,255,0.2) 0 2px, transparent 3px),
+    radial-gradient(circle at 88% 53%, rgba(255,255,255,0.16) 0 1px, transparent 2px),
+    radial-gradient(circle at 94% 82%, rgba(255,255,255,0.2) 0 2px, transparent 3px);
+  opacity: 0.75;
+  animation: starsTwinkle 7.5s ease-in-out infinite;
+}
+
+body::after {
+  background:
+    radial-gradient(circle at 7% 32%, rgba(255,255,255,0.28) 0 1px, transparent 2px),
+    radial-gradient(circle at 16% 55%, rgba(255,255,255,0.24) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 24% 9%, rgba(255,255,255,0.32) 0 1px, transparent 2px),
+    radial-gradient(circle at 33% 37%, rgba(255,255,255,0.28) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 41% 80%, rgba(255,255,255,0.24) 0 1px, transparent 2px),
+    radial-gradient(circle at 49% 22%, rgba(255,255,255,0.3) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 58% 48%, rgba(255,255,255,0.28) 0 1px, transparent 2px),
+    radial-gradient(circle at 66% 72%, rgba(255,255,255,0.24) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 75% 10%, rgba(255,255,255,0.28) 0 1px, transparent 2px),
+    radial-gradient(circle at 84% 34%, rgba(255,255,255,0.3) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 92% 61%, rgba(255,255,255,0.26) 0 1px, transparent 2px);
+  opacity: 0.45;
+  animation: starsTwinkle 4.8s ease-in-out infinite reverse;
+}
+
+.site-footer .footer-content {
+  text-align: left;
+}
+
+.site-footer .footer-sections {
+  justify-content: flex-start;
+}
+
+.site-footer .footer-section,
+.site-footer .footer-section h4,
+.site-footer .footer-nav,
+.site-footer .footer-nav ul,
+.site-footer .footer-inline-list {
+  text-align: left;
+}
+
+
+
+/* Projects tab: Magnolia card */
+.card-magnolia {
+  background: radial-gradient(circle at 78% 15%, rgba(214, 80, 80, 0.32), transparent 35%), linear-gradient(135deg, #151322, #2b1b28, #150f20);
 }
