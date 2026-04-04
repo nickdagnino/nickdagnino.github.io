@@ -15,6 +15,8 @@ Personal Website:
       a. Tags: Mechanical, Eletrical
     IV. Aero Helmet
     V. Hover Cycle
+    VI. Hestia: Automated Derivation of a Rocket Engine
+    VII. Magnolia's Airbrakes
 3) Resume/CV Page (timeline)
   A. Work Mission Statement
   B. Work Experience/Research

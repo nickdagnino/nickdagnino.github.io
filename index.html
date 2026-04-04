@@ -31,6 +31,7 @@
         <div class="header-right">
           <span class="hire-status" title="Current availability">🟢 Hire Me</span>
           <a href="/pages/resume.html" class="quick-resume" title="Quick resume access">Resume ↓</a>
+          <button id="project-visibility-toggle" class="quick-resume" title="Toggle project visibility">Show Curated Projects</button>
           <div class="social-links">
             <a href="https://www.linkedin.com/in/nickdagnino" target="_blank" rel="noopener noreferrer" title="LinkedIn">
               <svg class="social-icon" viewBox="0 0 24 24">
@@ -54,47 +55,76 @@
   <main class="home-main">
     <section class="hero hero-modern" aria-labelledby="home-mission">
       <div class="hero-content">
-        <p class="hero-eyebrow">Mission</p>
-        <div class="mission-patch" aria-label="Monkey mission patch">
-          <img src="assets/images/monkey-mission.svg" alt="Monkey mission patch" class="mission-patch-image">
-          <span>Monkey Mission Patch</span>
-        </div>
-        <h1 id="home-mission">Monkey Mission</h1>
+        <p class="hero-eyebrow">Portfolio</p>
+        <h1 id="home-mission">Nicholas Dagnino</h1>
         <p class="hero-text">
           I'm Nick, a mechanical and aerospace engineering student at UGA pushing the boundaries of an up-and-coming engineering
           program. I am passionate about the work I do and aim to build an understanding from first principles. Whether it's
           testing propulsion systems for fun, building research satellites, or designing high-speed aerial vehicles, I am always down
           for a challenge. Check out some more of my work.
         </p>
+        <div class="headshot-slot">
+          <img src="assets/images/SSRL_Headshot.jpg" alt="Headshot of Nick Dagnino" class="headshot-image">
+          <div class="headshot-info">
+            <strong>Nick Dagnino</strong>
+            <ul class="role-list">
+              <li>SRAD Responsible Engineer <span class="org-tag">UGA Rocketry</span></li>
+              <li>Hybrid Campaign Fluid Systems Lead <span class="org-tag">UGA Rocketry</span></li>
+              <li>Chief Propulsion Engineer <span class="org-tag">UGA Rocketry</span></li>
+              <li>MOCI Mechanical Team Lead <span class="org-tag">SSRL</span></li>
+            </ul>
+          </div>
+        </div>
         <div class="cta-buttons">
           <a href="pages/projects.html" class="cta-button">View Projects</a>
           <a href="#contact" class="cta-button secondary">Work With Me</a>
         </div>
       </div>
+    </section>
 
-      <div class="hero-media" aria-label="Mission and profile visuals">
-        <figure class="mission-graphic-wrap">
-          <img src="assets/images/monkey-mission.svg" alt="Mission graphic representing project direction" class="mission-graphic">
-        </figure>
-        <figure class="headshot-slot" aria-label="Headshot placeholder">
-          <img src="assets/images/headshot.svg" alt="Headshot of Nick Dagnino" class="headshot-image">
-          <figcaption>Add your headshot image at assets/images/headshot.svg</figcaption>
-        </figure>
+    <section class="involvement-labs" aria-label="Academic Involvement">
+      <h2 class="section-heading">What keeps me busy</h2>
+      <div class="split-section">
+        <div class="modern-card involvement-card floating-element">
+          <div class="card-header-flex">
+            <img src="assets\images\ssrl.svg" alt="SSRL Logo" class="involvement-logo">
+            <p class="hero-eyebrow">Space Systems • SSRL</p>
+          </div>
+          <h2>Small Satellite Research Laboratory</h2>
+          <p>
+            Contributing to the Small Satellite Research Lab (SSRL) at UGA, focused on the mechanical integration 
+            and structural analysis of CubeSat platforms. My work involves ensuring mission-critical hardware 
+            survives the rigors of launch and the vacuum of space.
+          </p>
+        </div>
+        <div class="modern-card involvement-card">
+          <div class="card-header-flex">
+            <img src="assets\images\ugarocketry.png" alt="UGA Rocketry Logo" class="involvement-logo">
+            <p class="hero-eyebrow">Propulsion • UGA Rocketry</p>
+          </div>
+          <h2>UGA Rocketry Team</h2>
+          <p>
+            Leading design efforts for experimental high-power rocketry. I focus on hybrid propulsion modeling 
+            and aerodynamic stabilization, pushing the capabilities of UGA’s student-led aerospace initiatives 
+            through iterative flight testing and CAD optimization.
+          </p>
+        </div>
       </div>
     </section>
 
     <section class="quick-projects" aria-labelledby="quick-projects-title">
       <h2 id="quick-projects-title">Project Quick Picks</h2>
       <div class="quick-project-grid">
-        <a href="/pages/projects/stock-market-nn.html" class="project-tile">Stock Market NN</a>
-        <a href="/pages/projects/electric-skateboard.html" class="project-tile">Electric Skateboard</a>
-        <a href="/pages/projects/axial-flux-motor.html" class="project-tile">Axial Flux Motor</a>
-        <a href="/pages/projects/hover-cycle.html" class="project-tile">Hover-Cycle</a>
-        <a href="/pages/projects/drij.html" class="project-tile">DRIJ Test Engine</a>
-        <a href="/pages/projects/aero-helmet.html" class="project-tile">Aero Helmet</a>
-        <a href="/pages/projects.html" class="project-tile" title="See projects page for details">Glide Strike</a>
-        <a href="/pages/projects.html" class="project-tile" title="See projects page for details">har-V (high atmospheric re-entry vehicle)</a>
-        <a href="/pages/projects.html" class="project-tile" title="See projects page for details">Magnolia's Airbrakes</a>
+        <a href="/pages/projects/stock-market-nn.html" class="project-tile" data-project-slug="stock-market-nn">Stock Market NN</a>
+        <a href="/pages/projects/electric-skateboard.html" class="project-tile" data-project-slug="electric-skateboard">Electric Skateboard</a>
+        <a href="/pages/projects/axial-flux-motor.html" class="project-tile" data-project-slug="axial-flux-motor">Axial Flux Motor</a>
+        <a href="/pages/projects/hover-cycle.html" class="project-tile" data-project-slug="hover-cycle">Hover-Cycle</a>
+        <a href="/pages/projects/drij.html" class="project-tile" data-project-slug="drij">DRIJ Test Engine</a>
+        <a href="/pages/projects/aero-helmet.html" class="project-tile" data-project-slug="aero-helmet">Aero Helmet</a>
+        <a href="/pages/projects/magnolia-airbrakes.html" class="project-tile" title="See projects page for details" data-project-slug="magnolia-airbrakes">Magnolia's Airbrakes</a>
+        <a href="/pages/projects.html" class="project-tile" title="See projects page for details" data-project-slug="glide-strike">Glide Strike</a>
+        <a href="/pages/projects.html" class="project-tile" title="See projects page for details" data-project-slug="har-v">har-V (high atmospheric re-entry vehicle)</a>
+        <a href="/pages/projects/hestia.html" class="project-tile" data-project-slug="hestia">Hestia: Rocket Engine Derivation</a>
       </div>
     </section>
   </main>

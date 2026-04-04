@@ -75,4 +75,50 @@ function initializeHeaderBehavior() {
         header.classList.toggle('mobile-collapsed', scrollingDown && pastThreshold);
         lastScrollY = currentScrollY;
     }, { passive: true });
+
+    // Project Visibility Toggle Logic
+    const projectVisibilityToggle = document.getElementById('project-visibility-toggle');
+    if (projectVisibilityToggle) {
+        // Define the slugs of projects you want to hide when the filter is active.
+        // These should match the 'data-project-slug' attributes in your HTML.
+        const inactiveProjectSlugs = [
+            'hover-cycle',
+            'portfolio-site',
+            'magnolia-airbrakes', // Example: if you want to hide the Magnolia card
+            'glide-strike',       // Example: if you want to hide the Glide Strike quick pick
+            'har-v'               // Example: if you want to hide the har-V quick pick
+        ];
+
+        // Retrieve filter state from localStorage, default to false (show all projects)
+        let projectFilterActive = localStorage.getItem('projectFilterActive') === 'true';
+
+        const applyProjectFilter = () => {
+            // Update button text and title based on current filter state
+            projectVisibilityToggle.textContent = projectFilterActive ? 'Show All Projects' : 'Show Curated Projects';
+            projectVisibilityToggle.title = projectFilterActive ? 'Currently showing a curated selection of projects. Click to show all projects.' : 'Currently showing all projects. Click to show a curated selection.';
+
+            // Select all project tiles and trading cards
+            document.querySelectorAll('.project-tile, .trading-card').forEach(projectElement => {
+                const slug = projectElement.dataset.projectSlug;
+
+                // If the project has a slug and is in the inactive list, and the filter is active, hide it.
+                if (slug && inactiveProjectSlugs.includes(slug) && projectFilterActive) {
+                    projectElement.classList.add('hidden');
+                } else {
+                    // Otherwise, ensure it's visible
+                    projectElement.classList.remove('hidden');
+                }
+            });
+        };
+
+        // Apply filter on page load to reflect saved state
+        applyProjectFilter();
+
+        // Add event listener for the toggle button
+        projectVisibilityToggle.addEventListener('click', () => {
+            projectFilterActive = !projectFilterActive; // Toggle the state
+            localStorage.setItem('projectFilterActive', String(projectFilterActive)); // Save state
+            applyProjectFilter(); // Re-apply the filter
+        });
+    }
 }

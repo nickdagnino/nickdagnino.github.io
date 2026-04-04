@@ -494,9 +494,15 @@ footer {
 .split-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  padding: 4rem 2rem;
+  gap: 2rem;
+  padding: 2rem 0;
   position: relative;
+}
+
+@media (max-width: 920px) {
+  .split-section {
+    grid-template-columns: 1fr;
+  }
 }
 
 .split-section::before {
@@ -508,6 +514,38 @@ footer {
   backdrop-filter: blur(20px);
   z-index: -1;
   border-radius: 30px;
+  opacity: 0.3;
+}
+
+.card-header-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.involvement-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line-soft);
+  padding: 5px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.involvement-card h2 {
+  margin: 0.5rem 0 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  color: var(--accent-ice);
+}
+
+.involvement-card p {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
 }
 
 .floating-element {
@@ -1121,20 +1159,46 @@ main,
   text-decoration: none;
   isolation: isolate;
   transform: translateY(0);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  background-size: cover;
+  background-position: center;
 }
 
 .trading-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8, 10, 22, 0.15), rgba(7, 5, 14, 0.9));
+  background: linear-gradient(180deg, rgba(8, 10, 22, 0.1) 0%, rgba(7, 5, 14, 0.95) 100%);
   z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.trading-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: 0.6s;
+  z-index: 1;
 }
 
 .trading-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.trading-card:hover::after {
+  left: 150%;
 }
 
 .card-kicker {
@@ -1164,13 +1228,13 @@ main,
   max-width: 34ch;
 }
 
-.card-market { background: radial-gradient(circle at 20% 15%, rgba(140, 130, 217, 0.42), transparent 40%), linear-gradient(130deg, #15152d, #1d2b43, #191327); }
-.card-skate { background: radial-gradient(circle at 85% 20%, rgba(188, 146, 108, 0.4), transparent 35%), linear-gradient(130deg, #18162a, #27363f, #1a1426); }
-.card-axial { background: radial-gradient(circle at 25% 20%, rgba(126, 172, 229, 0.35), transparent 35%), linear-gradient(135deg, #14142a, #1c2042, #151023); }
-.card-helmet { background: radial-gradient(circle at 78% 15%, rgba(213, 171, 135, 0.34), transparent 35%), linear-gradient(135deg, #17162b, #2f2d42, #1b1425); }
-.card-hover { background: radial-gradient(circle at 18% 75%, rgba(134, 119, 228, 0.36), transparent 35%), linear-gradient(145deg, #141127, #232743, #1a1428); }
-.card-portfolio { background: radial-gradient(circle at 83% 22%, rgba(206, 196, 174, 0.34), transparent 40%), linear-gradient(130deg, #1a1630, #23284a, #151525); }
-.card-engine { background: radial-gradient(circle at 22% 18%, rgba(214, 113, 132, 0.3), transparent 35%), linear-gradient(140deg, #1d1528, #2d1f35, #171123); }
+.card-market { background: radial-gradient(circle at 20% 15%, rgba(140, 130, 217, 0.42), transparent 40%), url('../assets/images/market.jpg'), linear-gradient(130deg, #15152d, #1d2b43, #191327); }
+.card-skate { background: radial-gradient(circle at 85% 20%, rgba(188, 146, 108, 0.4), transparent 35%), url('../assets/images/skate.jpg'), linear-gradient(130deg, #18162a, #27363f, #1a1426); }
+.card-axial { background: radial-gradient(circle at 25% 20%, rgba(126, 172, 229, 0.35), transparent 35%), url('../assets/images/axial.jpg'), linear-gradient(135deg, #14142a, #1c2042, #151023); }
+.card-helmet { background: radial-gradient(circle at 78% 15%, rgba(213, 171, 135, 0.34), transparent 35%), url('../assets/images/helmet.jpg'), linear-gradient(135deg, #17162b, #2f2d42, #1b1425); }
+.card-hover { background: radial-gradient(circle at 18% 75%, rgba(134, 119, 228, 0.36), transparent 35%), url('../assets/images/hover.jpg'), linear-gradient(145deg, #141127, #232743, #1a1428); }
+.card-portfolio { background: radial-gradient(circle at 83% 22%, rgba(206, 196, 174, 0.34), transparent 40%), url('../assets/images/portfolio.jpg'), linear-gradient(130deg, #1a1630, #23284a, #151525); }
+.card-engine { background: radial-gradient(circle at 22% 18%, rgba(214, 113, 132, 0.3), transparent 35%), url('../assets/images/engine.jpg'), linear-gradient(140deg, #1d1528, #2d1f35, #171123); }
 
 /* Footer refresh */
 .site-footer {
@@ -1259,10 +1323,11 @@ main,
 }
 
 .hero.hero-modern {
+  position: relative;
   margin: 0;
   min-height: auto;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr;
   gap: 2.5rem;
   text-align: left;
   align-items: center;
@@ -1329,33 +1394,49 @@ main,
 }
 
 .mission-graphic-wrap,
-.headshot-slot {
+.mission-graphic-wrap {
   margin: 0;
 }
 
-.mission-graphic {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+.headshot-slot {
+  z-index: 10;
 }
 
-.headshot-slot {
-  display: grid;
-  grid-template-columns: 88px 1fr;
-  align-items: center;
-  gap: 0.9rem;
-  color: #c2bdba;
-  font-size: 0.85rem;
+.mission-graphic {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 18px;
+  border: 1px solid var(--line-soft);
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mission-graphic:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 .headshot-image {
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
+  width: 100%;
+  max-height: min(55vh, 480px);
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 28px;
+  border: 2px solid rgba(147, 131, 216, 0.5);
+  box-shadow: 
+    0 0 40px rgba(147, 131, 216, 0.3),
+    0 20px 50px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.headshot-image:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 
+    0 0 60px rgba(147, 131, 216, 0.45),
+    0 30px 70px rgba(0, 0, 0, 0.7);
+  border-color: #fff;
 }
 
 .quick-projects {
@@ -1399,28 +1480,39 @@ main,
   }
 }
 
-/* ===== follow-up polish: mission patch + footer nav alignment ===== */
-.mission-patch {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  margin: 0.35rem 0 0.7rem;
-  padding: 0.35rem 0.6rem 0.35rem 0.35rem;
-  border-radius: 999px;
-  border: 1px solid rgba(223, 217, 206, 0.28);
-  background: rgba(255, 255, 255, 0.06);
-  color: #efe5d5;
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 .mission-patch-image {
   width: 28px;
   height: 28px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Added styles for images and media requested in notes.txt */
+.hero-video-container {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--line-soft);
+  margin: 1.5rem 0;
+}
+
+.hero-video-container video {
+  width: 100%;
+  display: block;
+}
+
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-void);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s;
 }
 
 .site-footer .footer-section {
@@ -1518,7 +1610,11 @@ body::after {
 
 /* Projects tab: Magnolia card */
 .card-magnolia {
-  background: radial-gradient(circle at 78% 15%, rgba(214, 80, 80, 0.32), transparent 35%), linear-gradient(135deg, #151322, #2b1b28, #150f20);
+  background: radial-gradient(circle at 78% 15%, rgba(214, 80, 80, 0.32), transparent 35%), url('../assets/images/magnolia.jpg'), linear-gradient(135deg, #151322, #2b1b28, #150f20);
+}
+.card-hestia {
+  background: radial-gradient(circle at 30% 20%, rgba(255, 140, 0, 0.35), transparent 40%), url('../assets/images/hestia.jpg'), linear-gradient(135deg, #1a1a2e, #2a1a35, #150f20);
+  background-position: center 20%;
 }
 
 /* Home hero media guardrails (prevents oversized image rendering) */
